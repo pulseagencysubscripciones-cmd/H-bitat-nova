@@ -2,6 +2,7 @@
 import React from 'react';
 import { CheckCircle2, ArrowRight, Play } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { ASSETS } from '../types';
 
 const Hero: React.FC = () => {
   const { scrollY } = useScroll();
@@ -15,7 +16,6 @@ const Hero: React.FC = () => {
         style={{ y: bgY, scale: bgScale }}
         className="absolute top-0 right-0 w-[600px] h-[600px] bg-brandPrimary/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/3" 
       />
-      <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-brandPrimary/5 rounded-full blur-[100px] -z-10" />
       
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
@@ -105,9 +105,10 @@ const Hero: React.FC = () => {
           >
             <div className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] animate-float border-[12px] border-white/80">
               <img 
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1400" 
+                src={ASSETS.hero} 
                 alt="Interiorismo Lujo Barcelona" 
                 className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-[3s]"
+                onError={(e) => (e.currentTarget.src = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1400')}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brandSecondary/40 via-transparent to-transparent"></div>
               
@@ -118,23 +119,6 @@ const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            <motion.div 
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="absolute -top-10 -right-10 glass-premium p-8 rounded-[2.5rem] shadow-2xl hidden md:block border border-white"
-            >
-              <div className="flex flex-col items-center">
-                <span className="text-4xl font-heading font-black text-brandPrimary mb-1">4.9/5</span>
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-3 h-3 bg-brandPrimary rounded-full" />
-                  ))}
-                </div>
-                <p className="text-[10px] text-brandSecondary/50 font-bold uppercase tracking-[0.2em]">Google Reviews</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

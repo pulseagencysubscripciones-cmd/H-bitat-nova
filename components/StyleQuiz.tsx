@@ -2,24 +2,25 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ASSETS } from '../types';
 
 const STYLES = [
   {
     id: 'minimalist',
     title: 'Minimalista Orgánico',
-    img: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&q=80&w=400',
+    img: ASSETS.quiz.minimalist,
     desc: 'Líneas limpias, materiales naturales y mucha luz.'
   },
   {
     id: 'industrial',
     title: 'Industrial Moderno',
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=400',
+    img: ASSETS.quiz.industrial,
     desc: 'Texturas crudas, espacios abiertos y techos altos.'
   },
   {
     id: 'classic',
     title: 'Clásico Contemporáneo',
-    img: 'https://images.unsplash.com/photo-1513519247388-4e28265dd2be?auto=format&fit=crop&q=80&w=400',
+    img: ASSETS.quiz.classic,
     desc: 'Elegancia atemporal con toques de diseño moderno.'
   }
 ];
@@ -70,7 +71,12 @@ const StyleQuiz: React.FC = () => {
                 whileHover={{ x: 10 }}
                 className={`relative group h-32 rounded-3xl overflow-hidden border-2 transition-all duration-300 ${selected === style.id ? 'border-brandPrimary ring-4 ring-brandPrimary/20' : 'border-white/10 hover:border-white/30'}`}
               >
-                <img src={style.img} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity" alt={style.title} />
+                <img 
+                  src={style.img} 
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity" 
+                  alt={style.title} 
+                  onError={(e) => (e.currentTarget.style.opacity = '0.1')}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-brandSecondary via-transparent to-transparent" />
                 <div className="relative h-full flex items-center px-10">
                   <div className="text-left">

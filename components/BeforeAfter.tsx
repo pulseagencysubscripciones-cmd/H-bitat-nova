@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ArrowLeftRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ASSETS } from '../types';
 
 const BeforeAfter: React.FC = () => {
   const [sliderPos, setSliderPos] = useState(50);
@@ -29,7 +30,7 @@ const BeforeAfter: React.FC = () => {
       >
         {/* After Image */}
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1200" alt="Después" className="w-full h-full object-cover" />
+          <img src={ASSETS.compare.after} alt="Después" className="w-full h-full object-cover" />
           <div className="absolute top-6 right-6 glass-premium px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-brandSecondary">Después</div>
         </div>
 
@@ -38,7 +39,7 @@ const BeforeAfter: React.FC = () => {
           className="absolute inset-0"
           style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
         >
-          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=1200" alt="Antes" className="w-full h-full object-cover grayscale" />
+          <img src={ASSETS.compare.before} alt="Antes" className="w-full h-full object-cover grayscale" />
           <div className="absolute top-6 left-6 bg-brandSecondary/80 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest text-white">Antes</div>
         </div>
 

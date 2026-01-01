@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ASSETS } from '../types';
 
 const REVIEWS = [
   {
@@ -10,7 +11,7 @@ const REVIEWS = [
     city: "Barcelona",
     text: "Profesionales, claros y cumplidores. Transformaron mi piso en el Eixample por completo sin un solo dolor de cabeza.",
     rating: 5,
-    image: "https://picsum.photos/seed/user1/100/100"
+    image: ASSETS.clients[0]
   },
   {
     id: 2,
@@ -18,7 +19,7 @@ const REVIEWS = [
     city: "Gràcia",
     text: "Sin sorpresas en el precio final. Eso para mí fue lo más importante. Recomendados 100%.",
     rating: 5,
-    image: "https://picsum.photos/seed/user2/100/100"
+    image: ASSETS.clients[1]
   },
   {
     id: 3,
@@ -26,7 +27,7 @@ const REVIEWS = [
     city: "Sants",
     text: "La cocina quedó espectacular. El equipo de diseño entendió mi estilo desde el primer minuto.",
     rating: 5,
-    image: "https://picsum.photos/seed/user3/100/100"
+    image: ASSETS.clients[2]
   },
   {
     id: 4,
@@ -34,7 +35,7 @@ const REVIEWS = [
     city: "Sarrià",
     text: "Limpios, rápidos y muy detallistas. Cumplieron los plazos de entrega a la perfección.",
     rating: 5,
-    image: "https://picsum.photos/seed/user4/100/100"
+    image: ASSETS.clients[3]
   }
 ];
 
@@ -78,7 +79,12 @@ const ReviewsCarousel: React.FC = () => {
                 <p className="text-brandSecondary/80 italic text-lg leading-relaxed mb-10">"{review.text}"</p>
               </div>
               <div className="flex items-center gap-5">
-                <img src={review.image} alt={review.name} className="w-14 h-14 rounded-full object-cover border-2 border-brandPrimary/20" />
+                <img 
+                  src={review.image} 
+                  alt={review.name} 
+                  className="w-14 h-14 rounded-full object-cover border-2 border-brandPrimary/20"
+                  onError={(e) => (e.currentTarget.src = `https://i.pravatar.cc/100?u=${review.id}`)}
+                />
                 <div>
                   <h4 className="font-bold text-brandSecondary text-lg leading-none mb-1">{review.name}</h4>
                   <p className="text-xs text-brandPrimary font-bold uppercase tracking-widest">{review.city}</p>

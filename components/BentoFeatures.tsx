@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Sparkles, PencilRuler, ShieldCheck } from 'lucide-react';
+import { ASSETS } from '../types';
 
 const BentoFeatures: React.FC = () => {
   const features = [
@@ -11,7 +12,7 @@ const BentoFeatures: React.FC = () => {
       icon: Home,
       size: "md:col-span-2 md:row-span-2",
       bg: "bg-white",
-      img: "https://images.unsplash.com/photo-1600607687940-47a04b629753?auto=format&fit=crop&q=80&w=800"
+      img: ASSETS.bento.integral
     },
     {
       title: "Interiorismo",
@@ -33,7 +34,7 @@ const BentoFeatures: React.FC = () => {
       icon: Sparkles,
       size: "md:col-span-2 md:row-span-1",
       bg: "bg-brandTertiary/30",
-      img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800"
+      img: ASSETS.bento.luxury
     }
   ];
 
