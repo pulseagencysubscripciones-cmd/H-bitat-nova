@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ASSETS } from '../types';
 
 const Footer: React.FC = () => {
   return (
@@ -10,22 +11,25 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-16 mb-24">
           <div className="col-span-2 space-y-8">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-brandPrimary flex items-center justify-center rounded-lg shadow-lg">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 10L12 3L21 10V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V10Z" />
-                </svg>
+            <div className="flex items-center gap-4">
+              <img 
+                src={ASSETS.logo} 
+                alt="Hábitat Nova" 
+                className="h-16 w-auto brightness-0 invert"
+              />
+              <div className="flex flex-col border-l border-white/10 pl-4">
+                <span className="text-2xl font-heading font-black tracking-tight">HÁBITAT NOVA</span>
+                <span className="text-[10px] tracking-[0.4em] text-brandPrimary font-bold uppercase">Construyendo Sueños</span>
               </div>
-              <span className="text-3xl font-heading font-extrabold tracking-tight">HÁBITAT NOVA</span>
             </div>
-            <p className="text-white/60 max-w-sm text-lg leading-relaxed">
+            <p className="text-white/60 max-w-sm text-lg leading-relaxed font-medium">
               Redefiniendo el concepto de reforma integral en Barcelona. Diseño consciente, ejecución de precisión y transparencia absoluta.
             </p>
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-brandPrimary">Expertise</h4>
-            <ul className="space-y-4 text-white/50 font-medium">
+            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-brandPrimary">Expertise</h4>
+            <ul className="space-y-4 text-white/50 font-bold text-sm">
               <li><a href="#reformas" className="hover:text-brandPrimary transition-colors">Reformas Integrales</a></li>
               <li><a href="#proceso" className="hover:text-brandPrimary transition-colors">Nuestro Proceso</a></li>
               <li><a href="#calculator" className="hover:text-brandPrimary transition-colors">Calculadora Online</a></li>
@@ -34,28 +38,27 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-brandPrimary">Legal</h4>
-            <ul className="space-y-4 text-white/50 font-medium">
-              <li><a href="#" className="hover:text-brandPrimary transition-colors">Aviso Legal</a></li>
-              <li><a href="#" className="hover:text-brandPrimary transition-colors">Privacidad</a></li>
-              <li><a href="#" className="hover:text-brandPrimary transition-colors">Términos y Condiciones</a></li>
-              <li><a href="#" className="hover:text-brandPrimary transition-colors">Cookies</a></li>
+            <h4 className="text-xs font-black uppercase tracking-[0.4em] text-brandPrimary">Contacto</h4>
+            <ul className="space-y-4 text-white/50 font-bold text-sm">
+              <li>Carrer de Balmes, 123</li>
+              <li>Barcelona, 08006</li>
+              <li>+34 930 000 000</li>
+              <li>hola@habitatnova.com</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-12 mb-12">
-          <p className="text-[10px] text-white/30 leading-relaxed uppercase tracking-[0.15em] text-justify">
+          <p className="text-[10px] text-white/30 leading-relaxed uppercase tracking-[0.15em] text-justify font-bold">
             Los precios mostrados en esta página y en la calculadora son orientativos y a modo de ejemplo, basados en precios medios de mercado en Barcelona para proyectos de alta gama. Se entiende como estándar premium: Materiales de primera calidad, diseño arquitectónico personalizado y ejecución por especialistas certificados. El presupuesto final se ajustará tras la visita técnica y mediciones definitivas. Esta información no constituye una oferta contractual vinculante hasta su formalización por contrato.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/5 text-white/40 text-sm">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/5 text-white/40 text-xs font-bold uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Hábitat Nova. Excellence in Construction.</p>
           <div className="flex gap-10">
             <a href="#" className="hover:text-brandPrimary transition-all transform hover:scale-110">Instagram</a>
             <a href="#" className="hover:text-brandPrimary transition-all transform hover:scale-110">LinkedIn</a>
-            <a href="#" className="hover:text-brandPrimary transition-all transform hover:scale-110">Pinterest</a>
           </div>
         </div>
       </div>

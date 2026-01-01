@@ -20,23 +20,24 @@ export interface NavItem {
   href: string;
 }
 
-// Configuración de Assets en GitHub
+// Configuración de Assets en GitHub utilizando las imágenes reales cargadas
 export const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/habitatnova/web-assets/main/img';
 
 export const ASSETS = {
-  hero: `${GITHUB_BASE_URL}/hero-luxury-apartment.jpg`,
+  logo: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/logo-habitat-nova.png`,
+  hero: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/living-room-premium.jpg`,
   bento: {
-    integral: `${GITHUB_BASE_URL}/reforma-integral-bento.jpg`,
-    luxury: `${GITHUB_BASE_URL}/acabados-lujo-bento.jpg`,
+    integral: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/kitchen-after.jpg`,
+    luxury: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/living-room-premium.jpg`,
   },
   compare: {
-    before: `${GITHUB_BASE_URL}/kitchen-before.jpg`,
-    after: `${GITHUB_BASE_URL}/kitchen-after.jpg`,
+    before: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/kitchen-before.jpg`,
+    after: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/kitchen-after.jpg`,
   },
   quiz: {
-    minimalist: `${GITHUB_BASE_URL}/style-minimalist.jpg`,
-    industrial: `${GITHUB_BASE_URL}/style-industrial.jpg`,
-    classic: `${GITHUB_BASE_URL}/style-classic.jpg`,
+    minimalist: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/living-room-premium.jpg`,
+    industrial: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/kitchen-after.jpg`,
+    classic: `https://raw.githubusercontent.com/habitatnova/web-assets/main/img/kitchen-before.jpg`,
   },
   clients: [
     `${GITHUB_BASE_URL}/client-maria.jpg`,
